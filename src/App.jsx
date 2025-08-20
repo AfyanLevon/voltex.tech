@@ -1,152 +1,160 @@
-import React from "react";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Badge from "./components/Badge.jsx";
+import Section from "./components/Section.jsx";
 
-const Check = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-    <path d="M20 6L9 17l-5-5" stroke="#b9f6a3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-function Header(){
+function Hero() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur">
-      <div className="section flex items-center justify-between py-4">
-        <a href="/" className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-lg" style={{background:"linear-gradient(135deg,#6ee777,#2e7d32)"}}/>
-          <span className="text-xl font-semibold tracking-wide">
-            voltex<span className="text-[var(--voltex-green)]">.tech</span>
-          </span>
-        </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-[var(--fg-300)]">
-          <a href="#bess" className="hover:text-white">BESS</a>
-          <a href="#smart" className="hover:text-white">Smart Home</a>
-          <a href="#security" className="hover:text-white">Security</a>
-          <a href="#contact" className="hover:text-white">Contact</a>
-          <a href="mailto:info@voltex.am" className="btn">Get a Quote</a>
-        </nav>
-      </div>
-    </header>
-  );
-}
-
-function Hero(){
-  return (
-    <section className="section pt-20">
-      <span className="badge">5-year Warranty on BESS</span>
-      <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-        Reliable <span className="text-[var(--voltex-green)]">Energy Storage</span>,<br/> Smart Homes & Security
-      </h1>
-      <p className="mt-5 max-w-2xl text-[var(--fg-500)]">
-        We design and install Battery Energy Storage Systems (BESS), practical smart-home automations
-        and robust security systems. Real hardware, certified installers, clean handover.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#bess" className="btn">Explore BESS</a>
-        <a href="#contact" className="btn-outline">Talk to an Engineer</a>
-      </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        <div className="card">
-          <h3 className="text-lg font-semibold">Residential & Commercial</h3>
-          <p className="mt-2 text-[var(--fg-500)]">Sizing, design and installation tailored to your load profile.</p>
-        </div>
-        <div className="card">
-          <h3 className="text-lg font-semibold">Local Support</h3>
-          <p className="mt-2 text-[var(--fg-500)]">On-site diagnostics, maintenance and 5-year warranty.</p>
+    <div className="relative overflow-hidden border-b border-white/5">
+      <div className="absolute inset-0 pointer-events-none"
+           style={{
+             background:
+               "radial-gradient(600px 300px at 20% -10%, rgba(107,209,109,0.18), transparent 60%), radial-gradient(800px 400px at 80% -20%, rgba(107,209,109,0.10), transparent 60%)"
+           }} />
+      <div className="container-xl relative z-10 py-20 sm:py-28">
+        <Badge>Building Excellence · Powering Progress</Badge>
+        <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
+          BESS, Smart Home & Security — <span className="text-voltex">done right</span>
+        </h1>
+        <p className="mt-4 max-w-2xl text-white/80">
+          We design, install and maintain Battery Energy Storage Systems, smart home automation and professional
+          security. Only at Voltex — <span className="text-white">5-year warranty for BESS</span>.
+          We also operate a construction arm for turnkey delivery and hard microelectric challenges.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" className="btn-primary">Get Free Quote →</a>
+          <a href="#services" className="btn-outline">Explore Services</a>
         </div>
       </div>
-    </section>
-  );
-}
-
-function Feature({title,items}){
-  return (
-    <div className="card h-full">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <ul className="mt-4 space-y-2 text-[var(--fg-300)]">
-        {items.map((t,i)=>(
-          <li key={i} className="flex items-start gap-2">
-            <Check/><span>{t}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
 
-function Sections(){
+function Services() {
+  const items = [
+    {
+      title: "BESS (Battery Energy Storage)",
+      desc: "Design & deployment for homes and businesses. Grid-tie, backup, hybrid inverters. 5-year warranty.",
+      emoji: "⚡"
+    },
+    {
+      title: "Smart Home",
+      desc: "Lighting, climate, access control, voice assistants, energy monitoring. Real-world reliable stacks.",
+      emoji: "🏠"
+    },
+    {
+      title: "Security Systems",
+      desc: "CCTV, alarms, access control, perimeter & fire systems. Remote monitoring and maintenance.",
+      emoji: "🛡️"
+    },
+    {
+      title: "Hard Microelectric Solutions",
+      desc: "Diagnostics, custom panels, tricky retrofits & industrial integrations led by senior engineers.",
+      emoji: "🧰"
+    }
+  ];
+
   return (
-    <>
-      <section id="bess" className="section">
-        <h2 className="text-3xl font-bold">Battery Energy Storage (BESS)</h2>
-        <p className="mt-3 text-[var(--fg-500)]">
-          Grid-tied & hybrid systems with safe LiFePO₄ batteries, proper BMS and surge protection.
-        </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Feature title="Design & Sizing" items={["Load study & simulation","Hybrid/UPS modes","DC/AC coupling"]}/>
-          <Feature title="Hardware" items={["LiFePO₄ packs • IP65","Certified inverters","Type-2 surge protectors"]}/>
-          <Feature title="Commissioning" items={["Testing & handover","Monitoring setup","5-year warranty"]}/>
-        </div>
-      </section>
-
-      <section id="smart" className="section">
-        <h2 className="text-3xl font-bold">Smart Home</h2>
-        <p className="mt-3 text-[var(--fg-500)]">Lighting, climate, blinds, metering and scenes without vendor lock-in.</p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Feature title="Comfort" items={["Lighting scenes","HVAC schedules","Voice & app control"]}/>
-          <Feature title="Efficiency" items={["Energy metering","Automation rules","Peak-shaving with BESS"]}/>
-          <Feature title="Open Standards" items={["KNX, Modbus, Zigbee","Local control options","Secure remote access"]}/>
-        </div>
-      </section>
-
-      <section id="security" className="section">
-        <h2 className="text-3xl font-bold">Security Systems</h2>
-        <p className="mt-3 text-[var(--fg-500)]">CCTV, access control and alarm systems designed for high uptime.</p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Feature title="CCTV" items={["PoE cameras","NVR with backups","Remote viewing"]}/>
-          <Feature title="Access / Alarm" items={["Readers & controllers","Perimeter sensors","Fail-safe power"]}/>
-          <Feature title="Networking" items={["UPS & surge protection","VLAN segregation","Secure storage"]}/>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function CTA(){
-  return (
-    <section id="contact" className="section text-center">
-      <div className="inline-flex items-center gap-2 badge">Licensed installers • Local support</div>
-      <h2 className="mt-5 text-3xl font-bold">Ready to start?</h2>
-      <p className="mt-2 text-[var(--fg-500)]">Tell us about your project and we’ll size a solution you can trust.</p>
-      <div className="mt-6 flex justify-center gap-3">
-        <a className="btn" href="mailto:info@voltex.am">info@voltex.am</a>
-        <a className="btn-outline" href="tel:+37495933939">+374 95 933 939</a>
+    <Section id="services" title="Our Services" kicker="What we do">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((x, i) => (
+          <div key={i} className="card">
+            <div className="text-3xl">{x.emoji}</div>
+            <h3 className="mt-3 font-semibold">{x.title}</h3>
+            <p className="mt-2 text-white/70 text-sm leading-relaxed">{x.desc}</p>
+          </div>
+        ))}
       </div>
-      <p className="mt-3 text-sm text-[var(--fg-500)]">44/2 Acharyan str, Yerevan, Armenia</p>
-    </section>
+    </Section>
   );
 }
 
-function Footer(){
+function Why() {
+  const bullets = [
+    "5-year warranty for BESS",
+    "Construction + Energy under one roof",
+    "Realistic solutions — not just futuristic demos",
+    "Engineering-first approach, on-time delivery"
+  ];
   return (
-    <footer className="mt-10 border-t border-white/10">
-      <div className="section flex flex-col sm:flex-row items-center justify-between gap-4 py-8 text-[var(--fg-500)]">
-        <span>© {new Date().getFullYear()} Voltex LLC — voltex.tech</span>
-        <div className="flex items-center gap-4">
-          <a href="https://voltex.am">Construction: voltex.am</a>
-          <a href="#contact">Contact</a>
+    <Section id="why" title="Why Choose Voltex?" kicker="Trust & advantages">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="card">
+          <h3 className="font-semibold">Value you can measure</h3>
+          <p className="mt-2 text-white/70">
+            Our teams combine construction experience with deep electrical engineering.
+            We design systems that are safe, scalable and maintainable.
+          </p>
+          <ul className="mt-4 space-y-2">
+            {bullets.map((b, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-voltex"></span>
+                <span className="text-white/80">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card">
+          <h3 className="font-semibold">Tech stack</h3>
+          <p className="mt-2 text-white/70">
+            We work with tier-1 batteries/inverters, proven sensors and controllers, neat wiring and clean panels.
+            Integrations with mobile/voice, smart meters and dashboards.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Lithium BESS","Hybrid Inverters","KNX/Zigbee","PoE CCTV","Access Control","Fire Safety"].map((t)=>(
+              <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs border border-white/10">{t}</span>
+            ))}
+          </div>
         </div>
       </div>
-    </footer>
+    </Section>
   );
 }
 
-export default function App(){
+function Contact() {
   return (
-    <>
-      <Header/>
-      <Hero/>
-      <Sections/>
-      <CTA/>
-      <Footer/>
-    </>
+    <Section id="contact" title="Ready to start?" kicker="Contact">
+      <div className="card">
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div>
+            <p className="text-white/80">
+              Tell us about your project — home or commercial. We’ll audit your needs and propose a realistic plan.
+            </p>
+            <div className="mt-5 space-y-2 text-sm">
+              <div><span className="text-white/60">Email:</span> <a className="hover:text-voltex" href="mailto:info@voltex.am">info@voltex.am</a></div>
+              <div><span className="text-white/60">Phone:</span> <a className="hover:text-voltex" href="tel:+37495933939">+374 95 933 939</a></div>
+              <div><span className="text-white/60">Address:</span> 44/2 Acharyan str, Yerevan, Armenia</div>
+            </div>
+            <div className="mt-6 flex gap-3">
+              <a href="mailto:info@voltex.am" className="btn-primary">Email us</a>
+              <a href="tel:+37495933939" className="btn-outline">Call now</a>
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-base-800/60 p-4">
+            <iframe
+              title="Voltex location"
+              className="h-72 w-full rounded-lg border border-white/10"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=44.0,40.1,45.2,41.0&layer=mapnik">
+            </iframe>
+            <p className="mt-2 text-xs text-white/50">Approximate location for demo.</p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Header />
+      <Hero />
+      <Services />
+      <Why />
+      <Contact />
+      <Footer />
+    </div>
   );
 }

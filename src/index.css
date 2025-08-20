@@ -2,27 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Voltex theme */
-:root{
-  --voltex-green:#57c84d;
-  --bg-900:#0e0f10;
-  --fg-100:#e8e8e8;
-  --fg-300:#cfcfcf;
-  --fg-500:#9aa0a6;
+/* Typography & utilities */
+@layer base {
+  html, body { @apply bg-base-900 text-white; }
 }
-html,body,#root{height:100%;}
-body{background:var(--bg-900); color:var(--fg-100);}
-a{color:var(--voltex-green);}
 
-.btn{ @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-medium transition; }
-.btn{ background:var(--voltex-green); color:#0b0b0b; }
-.btn-outline{ @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-medium border; border-color:var(--voltex-green); color:var(--fg-100); }
-.card{
-  @apply rounded-2xl p-6;
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.06);
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-voltex px-5 py-3 font-semibold text-black hover:opacity-90 shadow-soft transition;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-xl border border-voltex/50 px-5 py-3 font-semibold text-white hover:bg-white/5 transition;
+  }
+  .container-xl {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-20;
+  }
+  .card {
+    @apply rounded-2xl bg-base-800/60 backdrop-blur border border-white/5 p-6 hover:border-voltex/30 transition;
+  }
 }
-.badge{ @apply inline-flex items-center rounded-full px-3 py-1 text-sm;
-  background:rgba(87,200,77,.12); color:#b9f6a3; border:1px solid rgba(87,200,77,.35);
-}
-.section{ @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16; }
