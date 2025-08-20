@@ -3,6 +3,12 @@
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
+# Voltex.tech
+
+[![CodeQL](https://github.com/<YOUR-USERNAME>/voltex.tech/actions/workflows/codeql.yml/badge.svg)](https://github.com/<YOUR-USERNAME>/voltex.tech/actions/workflows/codeql.yml)
+[![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen?logo=dependabot)](https://github.com/<YOUR-USERNAME>/voltex.tech/network/updates)
+
+---
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
