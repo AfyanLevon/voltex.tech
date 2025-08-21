@@ -9,11 +9,9 @@ export default function Header() {
             className="block h-[28px] md:h-[32px] lg:h-[36px] w-auto object-contain"
             width="144"
             height="36"
-            style={{ height: '28px' }}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
+            style={{ height: '28px' }}     // fallback՝ նույնիսկ առանց Tailwind
+            onError={(e)=>{ e.currentTarget.style.display='none'; }}
+           />
           <div className="text-lg font-bold tracking-wide">voltex<span className="text-voltex">.tech</span></div>
         </a>
 
