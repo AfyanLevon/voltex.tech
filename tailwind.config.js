@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -18,7 +18,7 @@ export default {
           900: "#113615"
         },
         base: {
-          900: "#0E1116",  // Background
+          900: "#0E1116",
           800: "#141822",
           700: "#1B2130",
           600: "#232B3D",
