@@ -22,7 +22,7 @@ function Hero() {
         className="hero-mark"
       />
 
-      <div className="container-xl relative z-10 py-20 sm:py-28">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <Badge>Building Excellence · Powering Progress</Badge>
         <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
           BESS, Smart Home & Security —{" "}
@@ -36,10 +36,16 @@ function Hero() {
           challenges.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" className="btn-primary">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-voltex px-5 py-3 font-semibold text-black shadow-soft transition hover:opacity-90"
+          >
             Get Free Quote →
           </a>
-          <a href="#services" className="btn-outline">
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 rounded-xl border border-voltex/50 px-5 py-3 font-semibold text-white transition hover:bg-white/5"
+          >
             Explore Services
           </a>
         </div>
@@ -76,7 +82,10 @@ function Services() {
     <Section id="services" title="Our Services" kicker="What we do">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((x, i) => (
-          <div key={i} className="card">
+          <div
+            key={i}
+            className="rounded-2xl border border-white/5 bg-neutral-800/60 p-6 backdrop-blur transition hover:border-voltex/30"
+          >
             <div className="text-3xl">{x.emoji}</div>
             <h3 className="mt-3 font-semibold">{x.title}</h3>
             <p className="mt-2 text-white/70 text-sm leading-relaxed">
@@ -99,7 +108,7 @@ function Why() {
   return (
     <Section id="why" title="Why Choose Voltex?" kicker="Trust & advantages">
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="card">
+        <div className="rounded-2xl border border-white/5 bg-neutral-800/60 p-6 backdrop-blur transition hover:border-voltex/30">
           <h3 className="font-semibold">Value you can measure</h3>
           <p className="mt-2 text-white/70">
             Our teams combine construction experience with deep electrical
@@ -115,7 +124,7 @@ function Why() {
             ))}
           </ul>
         </div>
-        <div className="card">
+        <div className="rounded-2xl border border-white/5 bg-neutral-800/60 p-6 backdrop-blur transition hover:border-voltex/30">
           <h3 className="font-semibold">Tech stack</h3>
           <p className="mt-2 text-white/70">
             We work with tier-1 batteries/inverters, proven sensors and
@@ -148,7 +157,7 @@ function Why() {
 function Contact() {
   return (
     <Section id="contact" title="Ready to start?" kicker="Contact">
-      <div className="card">
+      <div className="rounded-2xl border border-white/5 bg-neutral-800/60 p-6 backdrop-blur transition hover:border-voltex/30">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
             <p className="text-white/80">
@@ -174,15 +183,21 @@ function Contact() {
               </div>
             </div>
             <div className="mt-6 flex gap-3">
-              <a href="mailto:info@voltex.am" className="btn-primary">
+              <a
+                href="mailto:info@voltex.am"
+                className="inline-flex items-center gap-2 rounded-xl bg-voltex px-5 py-3 font-semibold text-black shadow-soft transition hover:opacity-90"
+              >
                 Email us
               </a>
-              <a href="tel:+37495933939" className="btn-outline">
+              <a
+                href="tel:+37495933939"
+                className="inline-flex items-center gap-2 rounded-xl border border-voltex/50 px-5 py-3 font-semibold text-white transition hover:bg-white/5"
+              >
                 Call now
               </a>
             </div>
           </div>
-          <div className="rounded-xl border border-white/10 bg-base-800/60 p-4">
+          <div className="rounded-xl border border-white/10 bg-neutral-800/60 p-4">
             <iframe
               title="Voltex location"
               className="h-72 w-full rounded-lg border border-white/10"
