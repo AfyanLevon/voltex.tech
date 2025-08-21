@@ -9,7 +9,7 @@ export default function Header() {
             className="block h-[28px] md:h-[32px] lg:h-[36px] w-auto object-contain"
             width="144"
             height="36"
-            style={{ height: '28px' }}
+            style={{ height: '28px' }}  // fallback to ensure size even if Tailwind fails
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
           <div className="text-lg font-bold tracking-wide">
