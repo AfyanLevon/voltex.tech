@@ -6,11 +6,12 @@ export default function Header() {
           <img
             src="/voltex-logo.png"
             alt="Voltex"
-            className="h-8 md:h-9 lg:h-10 w-auto object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
+            className="block h-[28px] md:h-[32px] lg:h-[36px] w-auto object-contain"
+            width="144"
+            height="36"
+            style={{ height: '28px' }}     // fallback՝ նույնիսկ առանց Tailwind
+            onError={(e)=>{ e.currentTarget.style.display='none'; }}
+           />
           <div className="text-lg font-bold tracking-wide">voltex<span className="text-voltex">.tech</span></div>
         </a>
 
