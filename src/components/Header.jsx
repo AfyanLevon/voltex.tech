@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const buttonRef = useRef(null);
@@ -83,7 +89,7 @@ export default function Header() {
 
   return (
     <>
-              <header className="sticky top-0 z-40 border-b border-white/5 bg-gray-900/80 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-gray-900/80 backdrop-blur">
         <div className="container-xl flex h-20 md:h-24 lg:h-28 items-center justify-between">
           <a href="/" className="flex items-center gap-3 md:gap-4">
             <img
@@ -100,36 +106,40 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm">
-            <a href="#services" className="hover:text-voltex">Services</a>
-            <a href="#why" className="hover:text-voltex">Why Voltex</a>
-            <a href="#contact" className="hover:text-voltex">Contact</a>
-            <a href="mailto:info@voltex.am" className="btn-primary">Get a Quote</a>
+            <a href="#services" className="hover:text-green-500">{t.services}</a>
+            <a href="#why" className="hover:text-green-500">{t.whyVoltex}</a>
+            <a href="#contact" className="hover:text-green-500">{t.contact}</a>
+            <a href="mailto:info@voltex.am" className="btn-primary">{t.getQuote}</a>
+            <LanguageSwitcher />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            ref={buttonRef}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/5 transition-colors"
-            onClick={openDrawer}
-            aria-expanded={isOpen}
-            aria-controls="mobile-nav"
-            aria-label="Toggle mobile menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              ref={buttonRef}
+              className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/5 transition-colors"
+              onClick={openDrawer}
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav"
+              aria-label="Toggle mobile menu"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -162,7 +172,7 @@ export default function Header() {
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/5">
-            <h2 className="text-lg font-semibold">Menu</h2>
+            <h2 className="text-lg font-semibold">{t.menu}</h2>
             <button
               className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/5 transition-colors"
               onClick={closeDrawer}
@@ -190,24 +200,24 @@ export default function Header() {
             <a
               ref={firstFocusableRef}
               href="#services"
-              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-voltex transition-colors"
+              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-green-500 transition-colors"
               onClick={closeDrawer}
             >
-              Services
+              {t.services}
             </a>
             <a
               href="#why"
-              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-voltex transition-colors"
+              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-green-500 transition-colors"
               onClick={closeDrawer}
             >
-              Why Voltex
+              {t.whyVoltex}
             </a>
             <a
               href="#contact"
-              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-voltex transition-colors"
+              className="block py-3 px-4 rounded-lg hover:bg-white/5 hover:text-green-500 transition-colors"
               onClick={closeDrawer}
             >
-              Contact
+              {t.contact}
             </a>
             <a
               ref={lastFocusableRef}
@@ -215,7 +225,7 @@ export default function Header() {
               className="btn-primary w-full justify-center"
               onClick={closeDrawer}
             >
-              Get a Quote
+              {t.getQuote}
             </a>
           </nav>
         </div>

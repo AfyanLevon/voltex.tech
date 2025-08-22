@@ -1,9 +1,14 @@
+import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
+import { translations } from "./translations";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Badge from "./components/Badge.jsx";
 import Section from "./components/Section.jsx";
 
 function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   return (
     <div className="relative overflow-hidden border-b border-white/5">
       {/* soft green glows */}
@@ -25,22 +30,18 @@ function Hero() {
       <div className="container-xl relative z-10 py-20 sm:py-28">
         <Badge>Building Excellence · Powering Progress</Badge>
         <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
-          BESS, Smart Home & Security —{" "}
-          <span className="text-voltex">done right</span>
+          {t.heroTitle} —{" "}
+          <span className="text-green-500">{t.heroSubtitle}</span>
         </h1>
         <p className="mt-4 max-w-2xl text-white/80">
-          We design, install and maintain Battery Energy Storage Systems, smart
-          home automation and professional security. Only at Voltex —{" "}
-          <span className="text-white">5-year warranty for BESS</span>. We also
-          operate a construction arm for turnkey delivery and hard microelectric
-          challenges.
+          {t.heroDescription}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#contact" className="btn-primary">
-            Get Free Quote →
+            {t.heroCta} →
           </a>
           <a href="#services" className="btn-outline">
-            Explore Services
+            {t.learnMore}
           </a>
         </div>
       </div>
@@ -49,31 +50,34 @@ function Hero() {
 }
 
 function Services() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const items = [
     {
-      title: "BESS (Battery Energy Storage)",
-      desc: "Design & deployment for homes and businesses. Grid-tie, backup, hybrid inverters. 5-year warranty.",
+      title: t.webDevelopment,
+      desc: t.webDevelopmentDesc,
       emoji: "⚡",
     },
     {
-      title: "Smart Home",
-      desc: "Lighting, climate, access control, voice assistants, energy monitoring. Real-world reliable stacks.",
+      title: t.mobileDevelopment,
+      desc: t.mobileDevelopmentDesc,
       emoji: "🏠",
     },
     {
-      title: "Security Systems",
-      desc: "CCTV, alarms, access control, perimeter & fire systems. Remote monitoring and maintenance.",
+      title: t.uiUxDesign,
+      desc: t.uiUxDesignDesc,
       emoji: "🛡️",
     },
     {
-      title: "Hard Microelectric Solutions",
-      desc: "Diagnostics, custom panels, tricky retrofits & industrial integrations led by senior engineers.",
+      title: t.consulting,
+      desc: t.consultingDesc,
       emoji: "🧰",
     },
   ];
 
   return (
-    <Section id="services" title="Our Services" kicker="What we do">
+    <Section id="services" title={t.servicesTitle} kicker={t.servicesSubtitle}>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((x, i) => (
           <div key={i} className="card">
@@ -90,55 +94,34 @@ function Services() {
 }
 
 function Why() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const bullets = [
-    "5-year warranty for BESS",
-    "Construction + Energy under one roof",
-    "Realistic solutions — not just futuristic demos",
-    "Engineering-first approach, on-time delivery",
+    t.expertiseDesc,
+    t.qualityDesc,
+    t.supportDesc,
   ];
   return (
-    <Section id="why" title="Why Choose Voltex?" kicker="Trust & advantages">
-      <div className="grid gap-6 lg:grid-cols-2">
+    <Section id="why" title={t.whyVoltexTitle} kicker={t.whyVoltexSubtitle}>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="card">
-          <h3 className="font-semibold">Value you can measure</h3>
+          <h3 className="font-semibold">{t.expertise}</h3>
           <p className="mt-2 text-white/70">
-            Our teams combine construction experience with deep electrical
-            engineering. We design systems that are safe, scalable and
-            maintainable.
+            {t.expertiseDesc}
           </p>
-          <ul className="mt-4 space-y-2">
-            {bullets.map((b, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-voltex"></span>
-                <span className="text-white/80">{b}</span>
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="card">
-          <h3 className="font-semibold">Tech stack</h3>
+          <h3 className="font-semibold">{t.quality}</h3>
           <p className="mt-2 text-white/70">
-            We work with tier-1 batteries/inverters, proven sensors and
-            controllers, neat wiring and clean panels. Integrations with
-            mobile/voice, smart meters and dashboards.
+            {t.qualityDesc}
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "Lithium BESS",
-              "Hybrid Inverters",
-              "KNX/Zigbee",
-              "PoE CCTV",
-              "Access Control",
-              "Fire Safety",
-            ].map((t) => (
-              <span
-                key={t}
-                className="rounded-full bg-white/5 px-3 py-1 text-xs border border-white/10"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
+        </div>
+        <div className="card">
+          <h3 className="font-semibold">{t.support}</h3>
+          <p className="mt-2 text-white/70">
+            {t.supportDesc}
+          </p>
         </div>
       </div>
     </Section>
@@ -146,26 +129,28 @@ function Why() {
 }
 
 function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   return (
-    <Section id="contact" title="Ready to start?" kicker="Contact">
+    <Section id="contact" title={t.contactTitle} kicker={t.contactSubtitle}>
       <div className="card">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
             <p className="text-white/80">
-              Tell us about your project — home or commercial. We’ll audit your
-              needs and propose a realistic plan.
+              {t.contactDescription}
             </p>
             <div className="mt-5 space-y-2 text-sm">
               <div>
                 <span className="text-white/60">Email:</span>{" "}
-                <a className="hover:text-voltex" href="mailto:info@voltex.am">
-                  info@voltex.am
+                <a className="hover:text-green-500" href="mailto:info@voltex.am">
+                  {t.contactEmail}
                 </a>
               </div>
               <div>
                 <span className="text-white/60">Phone:</span>{" "}
-                <a className="hover:text-voltex" href="tel:+37495933939">
-                  +374 95 933 939
+                <a className="hover:text-green-500" href="tel:+37495933939">
+                  {t.contactPhone}
                 </a>
               </div>
               <div>
@@ -182,7 +167,7 @@ function Contact() {
               </a>
             </div>
           </div>
-          <div className="rounded-xl border border-white/10 bg-base-800/60 p-4">
+          <div className="rounded-xl border border-white/10 bg-gray-800/60 p-4">
             <iframe
               title="Voltex location"
               className="h-72 w-full rounded-lg border border-white/10"
@@ -200,7 +185,7 @@ function Contact() {
   );
 }
 
-export default function App() {
+function AppContent() {
   return (
     <div>
       <Header />
@@ -210,5 +195,13 @@ export default function App() {
       <Contact />
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
