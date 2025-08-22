@@ -1,4 +1,4 @@
-export default function ServiceIcons({ serviceType, className = "w-28 h-28" }) {
+export default function ServiceIcons({ serviceType, className = "w-32 h-32" }) {
   switch (serviceType) {
     case 'bess':
       return (
