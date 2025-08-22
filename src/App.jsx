@@ -83,7 +83,7 @@ function Services() {
         {items.map((x, i) => (
           <div key={i} className="card">
             <div className="flex justify-center">
-              <ServiceIcons serviceType={x.icon} className="w-16 h-16" />
+              <ServiceIcons serviceType={x.icon} className="w-32 h-32" />
             </div>
             <h3 className="mt-3 font-semibold">{x.title}</h3>
             <p className="mt-2 text-white/70 text-sm leading-relaxed">
