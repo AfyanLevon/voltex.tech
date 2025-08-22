@@ -59,6 +59,11 @@ function Hero() {
                 muted 
                 loop 
                 playsInline
+                controls
+                preload="auto"
+                onError={(e) => console.error('Video error:', e)}
+                onLoadStart={() => console.log('Video loading started')}
+                onCanPlay={() => console.log('Video can play')}
                 style={{
                   filter: 'brightness(1.1) contrast(1.1)',
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
