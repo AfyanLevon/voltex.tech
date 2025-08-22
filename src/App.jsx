@@ -55,18 +55,30 @@ function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <video 
                 className="w-full h-auto rounded-2xl cursor-pointer" 
-                muted 
-                loop 
-                playsInline
                 controls
                 preload="metadata"
-                poster="/images/video-poster.jpg"
-                onError={(e) => console.error('Video error:', e)}
+                onError={(e) => {
+                  console.error('Video error:', e);
+                  console.error('Video error details:', e.target.error);
+                  console.error('Video src:', e.target.src);
+                  console.error('Video networkState:', e.target.networkState);
+                  console.error('Video readyState:', e.target.readyState);
+                }}
                 onLoadStart={() => console.log('Video loading started')}
                 onCanPlay={() => console.log('Video can play')}
+                onLoadedData={() => console.log('Video data loaded')}
+                onPlay={() => console.log('Video started playing')}
+                onPause={() => console.log('Video paused')}
+                onLoadStart={() => console.log('Video load started')}
+                onProgress={() => console.log('Video loading progress')}
                 onClick={(e) => {
+                  console.log('Video clicked, current state:', e.target.paused ? 'paused' : 'playing');
                   if (e.target.paused) {
-                    e.target.play();
+                    e.target.play().then(() => {
+                      console.log('Video play successful');
+                    }).catch(err => {
+                      console.error('Video play failed:', err);
+                    });
                   } else {
                     e.target.pause();
                   }
@@ -77,7 +89,9 @@ function Hero() {
                 }}
               >
                 <source src="/videos/Voltex-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                <p className="text-white p-4 text-center">
+                  Video loading... If this message persists, the video file may be too large or inaccessible.
+                </p>
               </video>
               
               {/* Subtle overlay for better text readability */}
