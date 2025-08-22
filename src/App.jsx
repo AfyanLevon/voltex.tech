@@ -32,7 +32,7 @@ function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div>
-            <Badge>Building Excellence · Powering Progress</Badge>
+            <Badge>{t.heroBadge}</Badge>
             <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
               {t.heroTitle} —{" "}
               <span className="text-green-500">{t.heroSubtitle}</span>

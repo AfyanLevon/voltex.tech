@@ -8,6 +8,7 @@ export const translations = {
     menu: "Menu",
     
     // Hero Section
+    heroBadge: "Accumulate Your Independence",
     heroTitle: "Technology",
     heroSubtitle: "done right",
     heroDescription: "We build digital solutions that drive business growth and user engagement.",
@@ -61,6 +62,7 @@ export const translations = {
     menu: "Մենյու",
     
     // Hero Section
+    heroBadge: "Կուտակեք Ձեր Անկախությունը",
     heroTitle: "Տեխնոլոգիա",
     heroSubtitle: "ճիշտ կերպով",
     heroDescription: "Մենք ստեղծում ենք թվային լուծումներ, որոնք խթանում են բիզնեսի աճը և օգտատերերի ներգրավվածությունը:",
