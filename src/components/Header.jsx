@@ -84,17 +84,17 @@ export default function Header() {
   return (
     <>
               <header className="sticky top-0 z-40 border-b border-white/5 bg-gray-900/80 backdrop-blur">
-        <div className="container-xl flex h-16 md:h-16 lg:h-[72px] items-center justify-between">
+        <div className="container-xl flex h-20 md:h-24 lg:h-28 items-center justify-between">
           <a href="/" className="flex items-center gap-3 md:gap-4">
             <img
               src="/voltex-logo.png"
               alt="Voltex"
-              className="block h-auto w-auto max-h-8 md:max-h-10 lg:max-h-12 object-contain"
+              className="block h-auto w-auto max-h-12 md:max-h-16 lg:max-h-20 object-contain"
               width="128"
               height="32"
             />
             <div className="text-base md:text-lg font-bold tracking-wide">
-              voltex<span className="text-voltex">.tech</span>
+              VOLTEX <span className="text-green-500">LLC</span>
             </div>
           </a>
 
