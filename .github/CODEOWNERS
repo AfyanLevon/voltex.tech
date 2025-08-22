@@ -1,1 +1,19 @@
-*  @AfyanLevon
+# Default owner for all files
+*                         @AfyanLevon
+
+# Frontend (React/TS/Tailwind)
+src/components/           @AfyanLevon
+src/pages/                @AfyanLevon
+src/styles/               @AfyanLevon
+
+# Configs & build
+vite.config.*             @AfyanLevon
+tailwind.config.*         @AfyanLevon
+postcss.config.*          @AfyanLevon
+
+# Deployment
+vercel.*                  @AfyanLevon
+
+# Docs
+README.md                 @AfyanLevon
+.github/                  @AfyanLevon
