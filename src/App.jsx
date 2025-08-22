@@ -29,21 +29,49 @@ function Hero() {
       />
 
       <div className="container-xl relative z-10 py-20 sm:py-28">
-        <Badge>Building Excellence · Powering Progress</Badge>
-        <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
-          {t.heroTitle} —{" "}
-          <span className="text-green-500">{t.heroSubtitle}</span>
-        </h1>
-        <p className="mt-4 max-w-2xl text-white/80">
-          {t.heroDescription}
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" className="btn-primary">
-            {t.heroCta} →
-          </a>
-          <a href="#services" className="btn-outline">
-            {t.learnMore}
-          </a>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Text content */}
+          <div>
+            <Badge>Building Excellence · Powering Progress</Badge>
+            <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
+              {t.heroTitle} —{" "}
+              <span className="text-green-500">{t.heroSubtitle}</span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-white/80">
+              {t.heroDescription}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#contact" className="btn-primary">
+                {t.heroCta} →
+              </a>
+              <a href="#services" className="btn-outline">
+                {t.learnMore}
+              </a>
+            </div>
+          </div>
+
+          {/* Right side - Video player */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <video 
+                className="w-full h-auto rounded-2xl" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                style={{
+                  filter: 'brightness(1.1) contrast(1.1)',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                }}
+              >
+                <source src="/videos/Voltex-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              
+              {/* Subtle overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
