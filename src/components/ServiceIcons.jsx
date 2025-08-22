@@ -3,7 +3,7 @@ export default function ServiceIcons({ serviceType, className = "w-16 h-16" }) {
     case 'bess':
       return (
         <img
-          src="/icons/bess-icon.png"
+          src="/icons/BESS_icon.png"
           alt="BESS - Battery Energy Storage Systems"
           className={className}
         />
@@ -12,7 +12,7 @@ export default function ServiceIcons({ serviceType, className = "w-16 h-16" }) {
     case 'smartHome':
       return (
         <img
-          src="/icons/smart-home-icon.png"
+          src="/icons/SmartHome_icon.png"
           alt="Smart Home Solutions"
           className={className}
         />
@@ -21,7 +21,7 @@ export default function ServiceIcons({ serviceType, className = "w-16 h-16" }) {
     case 'securitySystems':
       return (
         <img
-          src="/icons/security-systems-icon.png"
+          src="/icons/SecuritySystems_icon.png"
           alt="Security Systems"
           className={className}
         />
@@ -30,7 +30,7 @@ export default function ServiceIcons({ serviceType, className = "w-16 h-16" }) {
     case 'energySolutions':
       return (
         <img
-          src="/icons/energy-solutions-icon.png"
+          src="/icons/OtherEnergySolutions_icon.png"
           alt="Other Energy Solutions"
           className={className}
         />
