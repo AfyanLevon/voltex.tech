@@ -54,16 +54,23 @@ function Hero() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <video 
-                className="w-full h-auto rounded-2xl" 
-                autoPlay 
+                className="w-full h-auto rounded-2xl cursor-pointer" 
                 muted 
                 loop 
                 playsInline
                 controls
-                preload="auto"
+                preload="metadata"
+                poster="/images/video-poster.jpg"
                 onError={(e) => console.error('Video error:', e)}
                 onLoadStart={() => console.log('Video loading started')}
                 onCanPlay={() => console.log('Video can play')}
+                onClick={(e) => {
+                  if (e.target.paused) {
+                    e.target.play();
+                  } else {
+                    e.target.pause();
+                  }
+                }}
                 style={{
                   filter: 'brightness(1.1) contrast(1.1)',
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
