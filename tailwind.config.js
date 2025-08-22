@@ -5,24 +5,24 @@ export default {
     extend: {
       colors: {
         voltex: {
-          DEFAULT: "#6BD16D",   // Voltex green
-          50: "#EEFAEF",
-          100: "#D8F4DA",
-          200: "#B2E9B6",
-          300: "#8DDE93",
-          400: "#6BD16D",
-          500: "#49B64C",
-          600: "#36933A",
-          700: "#28702C",
-          800: "#1C5220",
-          900: "#113615"
+          DEFAULT: "hsl(var(--voltex))",
+          50: "hsl(var(--voltex-50))",
+          100: "hsl(var(--voltex-100))",
+          200: "hsl(var(--voltex-200))",
+          300: "hsl(var(--voltex-300))",
+          400: "hsl(var(--voltex-400))",
+          500: "hsl(var(--voltex-500))",
+          600: "hsl(var(--voltex-600))",
+          700: "hsl(var(--voltex-700))",
+          800: "hsl(var(--voltex-800))",
+          900: "hsl(var(--voltex-900))"
         },
         base: {
-          900: "#0E1116",
-          800: "#141822",
-          700: "#1B2130",
-          600: "#232B3D",
-          500: "#2C3650"
+          900: "hsl(var(--base-900))",
+          800: "hsl(var(--base-800))",
+          700: "hsl(var(--base-700))",
+          600: "hsl(var(--base-600))",
+          500: "hsl(var(--base-500))"
         }
       },
       boxShadow: {

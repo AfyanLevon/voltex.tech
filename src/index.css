@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+/* Custom color variables for Tailwind v4 */
+:root {
+  --voltex: 120 49% 58%;
+  --voltex-50: 120 49% 95%;
+  --voltex-100: 120 49% 90%;
+  --voltex-200: 120 49% 80%;
+  --voltex-300: 120 49% 70%;
+  --voltex-400: 120 49% 58%;
+  --voltex-500: 120 49% 47%;
+  --voltex-600: 120 49% 37%;
+  --voltex-700: 120 49% 28%;
+  --voltex-800: 120 49% 20%;
+  --voltex-900: 120 49% 13%;
+  
+  --base-900: 220 13% 7%;
+  --base-800: 220 13% 11%;
+  --base-700: 220 13% 15%;
+  --base-600: 220 13% 19%;
+  --base-500: 220 13% 24%;
+}
+
 /* Typography & utilities */
 @layer base {
   html, body { @apply bg-gray-900 text-white; }
