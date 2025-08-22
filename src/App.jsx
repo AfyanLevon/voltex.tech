@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Badge from "./components/Badge.jsx";
 import Section from "./components/Section.jsx";
+import ServiceIcons from "./components/ServiceIcons.jsx";
 
 function Hero() {
   const { language } = useLanguage();
@@ -55,24 +56,24 @@ function Services() {
   
   const items = [
     {
-      title: t.webDevelopment,
-      desc: t.webDevelopmentDesc,
-      emoji: "⚡",
+      title: t.bess,
+      desc: t.bessDesc,
+      icon: 'bess',
     },
     {
-      title: t.mobileDevelopment,
-      desc: t.mobileDevelopmentDesc,
-      emoji: "🏠",
+      title: t.smartHome,
+      desc: t.smartHomeDesc,
+      icon: 'smartHome',
     },
     {
-      title: t.uiUxDesign,
-      desc: t.uiUxDesignDesc,
-      emoji: "🛡️",
+      title: t.securitySystems,
+      desc: t.securitySystemsDesc,
+      icon: 'securitySystems',
     },
     {
-      title: t.consulting,
-      desc: t.consultingDesc,
-      emoji: "🧰",
+      title: t.energySolutions,
+      desc: t.energySolutionsDesc,
+      icon: 'energySolutions',
     },
   ];
 
@@ -81,7 +82,9 @@ function Services() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((x, i) => (
           <div key={i} className="card">
-            <div className="text-3xl">{x.emoji}</div>
+            <div className="flex justify-center">
+              <ServiceIcons serviceType={x.icon} className="w-16 h-16" />
+            </div>
             <h3 className="mt-3 font-semibold">{x.title}</h3>
             <p className="mt-2 text-white/70 text-sm leading-relaxed">
               {x.desc}
