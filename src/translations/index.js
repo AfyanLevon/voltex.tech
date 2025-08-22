@@ -9,6 +9,9 @@ export const translations = {
     
     // Hero Section
     heroBadge: "Accumulate Your Independence",
+    heroBadgeWord1: "Accumulate",
+    heroBadgeWord2: "Your", 
+    heroBadgeWord3: "Independence",
     heroTitle: "Technology",
     heroSubtitle: "done right",
     heroDescription: "We build digital solutions that drive business growth and user engagement.",
@@ -63,6 +66,9 @@ export const translations = {
     
     // Hero Section
     heroBadge: "Կուտակեք Ձեր Անկախությունը",
+    heroBadgeWord1: "Կուտակեք",
+    heroBadgeWord2: "Ձեր", 
+    heroBadgeWord3: "Անկախությունը",
     heroTitle: "Տեխնոլոգիա",
     heroSubtitle: "ճիշտ կերպով",
     heroDescription: "Մենք ստեղծում ենք թվային լուծումներ, որոնք խթանում են բիզնեսի աճը և օգտատերերի ներգրավվածությունը:",
