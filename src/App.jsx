@@ -182,7 +182,7 @@ function Contact() {
               </a>
             </div>
           </div>
-          <div className="rounded-xl border border-white/10 bg-base-800/60 p-4">
+          <div className="rounded-xl border border-white/10 bg-gray-800/60 p-4">
             <iframe
               title="Voltex location"
               className="h-72 w-full rounded-lg border border-white/10"

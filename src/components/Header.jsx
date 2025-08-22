@@ -83,7 +83,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-white/5 bg-base-900/80 backdrop-blur">
+              <header className="sticky top-0 z-40 border-b border-white/5 bg-gray-900/80 backdrop-blur">
         <div className="container-xl flex h-16 md:h-16 lg:h-[72px] items-center justify-between">
           <a href="/" className="flex items-center gap-3 md:gap-4">
             <img
@@ -155,7 +155,7 @@ export default function Header() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
-          className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-base-900/95 backdrop-blur border-l border-white/5 transform transition-transform duration-300 ease-out ${
+          className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-gray-900/95 backdrop-blur border-l border-white/5 transform transition-transform duration-300 ease-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           onTransitionEnd={handleTransitionEnd}
