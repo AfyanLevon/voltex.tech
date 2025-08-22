@@ -32,7 +32,15 @@ function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div>
-            <Badge>{t.heroBadge}</Badge>
+            {/* Large Slogan with Armenian Flag Colors */}
+            <div className="mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                <span className="text-red-500">{t.heroBadgeWord1}</span>
+                <span className="text-blue-500 mx-2">{t.heroBadgeWord2}</span>
+                <span className="text-orange-500">{t.heroBadgeWord3}</span>
+              </h2>
+            </div>
+            
             <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
               {t.heroTitle} —{" "}
               <span className="text-green-500">{t.heroSubtitle}</span>
