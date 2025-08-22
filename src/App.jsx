@@ -53,46 +53,64 @@ function Hero() {
           {/* Right side - Video player */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <video 
-                className="w-full h-auto rounded-2xl cursor-pointer" 
-                controls
-                preload="metadata"
-                onError={(e) => {
-                  console.error('Video error:', e);
-                  console.error('Video error details:', e.target.error);
-                  console.error('Video src:', e.target.src);
-                  console.error('Video networkState:', e.target.networkState);
-                  console.error('Video readyState:', e.target.readyState);
-                }}
-                onLoadStart={() => console.log('Video loading started')}
-                onCanPlay={() => console.log('Video can play')}
-                onLoadedData={() => console.log('Video data loaded')}
-                onPlay={() => console.log('Video started playing')}
-                onPause={() => console.log('Video paused')}
-                onLoadStart={() => console.log('Video load started')}
-                onProgress={() => console.log('Video loading progress')}
-                onClick={(e) => {
-                  console.log('Video clicked, current state:', e.target.paused ? 'paused' : 'playing');
-                  if (e.target.paused) {
-                    e.target.play().then(() => {
-                      console.log('Video play successful');
-                    }).catch(err => {
-                      console.error('Video play failed:', err);
-                    });
-                  } else {
-                    e.target.pause();
-                  }
-                }}
-                style={{
-                  filter: 'brightness(1.1) contrast(1.1)',
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                }}
-              >
-                <source src="/videos/Voltex-video.mp4" type="video/mp4" />
-                <p className="text-white p-4 text-center">
-                  Video loading... If this message persists, the video file may be too large or inaccessible.
-                </p>
-              </video>
+              {/* YouTube embed for production (Vercel) */}
+              <div className="w-full aspect-video rounded-2xl overflow-hidden">
+                <iframe
+                  className="w-full h-full rounded-2xl"
+                  src="https://www.youtube.com/embed/VYlbXRlBoc0?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0"
+                  title="Voltex Technology Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    filter: 'brightness(1.1) contrast(1.1)',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                  }}
+                ></iframe>
+              </div>
+              
+              {/* Local video for development only */}
+              {process.env.NODE_ENV === 'development' && (
+                <video 
+                  className="w-full h-auto rounded-2xl cursor-pointer" 
+                  controls
+                  preload="metadata"
+                  onError={(e) => {
+                    console.error('Video error:', e);
+                    console.error('Video error details:', e.target.error);
+                    console.error('Video src:', e.target.src);
+                    console.error('Video networkState:', e.target.networkState);
+                    console.error('Video readyState:', e.target.readyState);
+                  }}
+                  onLoadStart={() => console.log('Video loading started')}
+                  onCanPlay={() => console.log('Video can play')}
+                  onLoadedData={() => console.log('Video data loaded')}
+                  onPlay={() => console.log('Video started playing')}
+                  onPause={() => console.log('Video paused')}
+                  onProgress={() => console.log('Video loading progress')}
+                  onClick={(e) => {
+                    console.log('Video clicked, current state:', e.target.paused ? 'paused' : 'playing');
+                    if (e.target.paused) {
+                      e.target.play().then(() => {
+                        console.log('Video play successful');
+                      }).catch(err => {
+                        console.error('Video play failed:', err);
+                      });
+                    } else {
+                      e.target.pause();
+                    }
+                  }}
+                  style={{
+                    filter: 'brightness(1.1) contrast(1.1)',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  <source src="/videos/Voltex-video.mp4" type="video/mp4" />
+                  <p className="text-white p-4 text-center">
+                    Video loading... If this message persists, the video file may be too large or inaccessible.
+                  </p>
+                </video>
+              )}
               
               {/* Subtle overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
