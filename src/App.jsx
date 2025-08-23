@@ -32,7 +32,7 @@ function Hero() {
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-32">
         {/* Large Centered Slogan */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight text-green-500 [text-shadow:_0_0_20px_rgba(34,197,94,0.8),_0_0_40px_rgba(34,197,94,0.6),_0_0_60px_rgba(34,197,94,0.4)]">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 bg-clip-text text-transparent animate-pulse">
             {t.heroBadgeWord1} {t.heroBadgeWord2} {t.heroBadgeWord3}
           </h2>
         </div>
