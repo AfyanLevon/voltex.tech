@@ -13,7 +13,7 @@ export const translations = {
     heroBadgeWord2: "Your", 
     heroBadgeWord3: "Independence",
     heroTitle: "Technology",
-    heroSubtitle: "done right",
+    heroSubtitle: "delivering measurable results",
     heroDescription: "We build digital solutions that drive business growth and user engagement.",
     heroCta: "Start Your Project",
     
@@ -70,7 +70,7 @@ export const translations = {
     heroBadgeWord2: "Ձեր", 
     heroBadgeWord3: "Անկախությունը",
     heroTitle: "Տեխնոլոգիա",
-    heroSubtitle: "ճիշտ կերպով",
+    heroSubtitle: "տրամադրում է չափելի արդյունքներ",
     heroDescription: "Մենք ստեղծում ենք թվային լուծումներ, որոնք խթանում են բիզնեսի աճը և օգտատերերի ներգրավվածությունը:",
     heroCta: "Սկսել նախագիծը",
     
